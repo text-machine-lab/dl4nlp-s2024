@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>COMP 5300: Deep Learning for NLP -- Spring 2024 @ UMass Lowell</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <header class="row">
+        <h3>COMP 5300: Deep Learning for NLP -- Spring 2024<br/><br/>
+        <img src="images/logo.png" width="300" height="200">
+        </h3>
+
+    </header>
+
+    <div class="row">
+
+        <div class="two columns">
+
+            <p>
+            <a class="button-half menu" href="index.html">Home</a>
+            <a class="button-half menu" href="schedule.html">Schedule</a>
+            <a class="button-half menu" href="homeworks.html">Homeworks</a>
+            <br/><br/>
+            </p>
+
+
+        </div>
+
+
+        <div class="ten columns">
+
+            <h3>Setting up the environment</h3>
+
+        <p>
+            If you already have anaconda/conda/miniconda/conda-forge, proceed to step 7.
+
+            <ul>
+                <li><b>Step 1.</b> Download conda installer.</li>
+                <pre><code>wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh</code></pre>
+                <p><b>NOTE 1a:</b> if this fails with "wget: command not found" install wget via "sudo apt install wget" (Ubuntu)
+                        or "brew install wget" (MacOS). Then try to do step 1 again.</p>
+                <p><b>NOTE 1b:</b> alternatively, you can just follow the link above using your browser and download the file this way.</p>
+                    
+                <li><b>Step 2.</b>  Install miniconda.</li>
+                <pre><code>bash ~/miniconda.sh</code></pre>
+                
+                <li><b>Step 3.</b> Read and accept all licences.</li>
+
+                <li><b>Step 4.</b> When asked where to install conda, just press enter to install it in the default directory.</li>
+
+                <li><b>Step 5. IMPORTANT:</b> Then it will ask you "Do you wish the installer to initialize Miniconda3". Type "yes" and press enter.</li>
+
+                <li><b>Step 6. IMPORTANT:</b> Restart your terminal session – open and close your terminal window.</li>
+                <p><b>NOTE: </b>If you don't want conda to start base envorinment in every terminal you open, you can execute `conda config --set auto_activate_base false`.</p>
+
+                <li><b>Step 7.</b> Create a new environment `nlp_class` with python 3.7.</li>
+                <pre><code>conda create --name nlp_class python=3.7</code></pre>
+                <p><b>NOTE: </b>If you have `conda not found` error, it might mean you skipped step 5 and now need to add conda to your `PATH` manually. It it easy to do, here's [a solution](https://stackoverflow.com/questions/35246386/conda-command-not-found).
+            
+                <li><b>Step 8.</b> Activate this environment.</li>
+                <pre><code>conda activate nlp_class</code></pre>
+                
+                <li><b>Step 9.</b> Install required libraries.</li>
+                <pre><code>python -m pip install jupyterlab torch transformers datasets scikit-learn ipywidgets</code></pre>
+
+                <li><b>Step 10.</b> Install a new kernel to a jupyter lab.</li>
+                <pre><code>python -m ipykernel install --name nlp_class --user</code></pre>
+
+                <li><b>Step 11.</b>Launch jupyter lab.</li>
+                <pre><code>jupyter lab</code></pre>
+                <p>This should open a browser tab with Jupyter Lab running.</p>
+
+                <li><b>Step 12.</b>On the right, you will see a couple of available notebook enviornments under "Notebook" title.
+                    Select "nlp_class" and create a new notebook.</li>
+
+                <li><b>Step 13.</b>Make sure all imports work. To do this execute the following code.</li>
+                <pre><code> 
+                    ```python
+                    import torch
+                    import sklearn
+                    import transformers
+                    import datasets
+                    ```
+                </code></pre>
+
+                </ul>
+
+            <p> this fails, ask TA for help.</p>
+            <p>you should be good to go. If you are wondering why we need conda and environments, you can read [this blogpost](https://realpython.com/python-virtual-environments-a-primer/).</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
